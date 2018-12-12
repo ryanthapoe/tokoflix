@@ -3,7 +3,7 @@ import "./Spinner.css";
 
 const Spinner = () => {
   return (
-    <div className="lds-css">
+    <div className="lds-css customSpinner">
       <div className="lds-gear" style={{ width: `100%`, height: `100%` }}>
         <div>
           <div />

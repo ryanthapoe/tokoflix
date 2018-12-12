@@ -1,0 +1,11 @@
+.custom {
+  height: 250px;
+  width: 100%;
+  display: block;
+}
+.card-header {
+  display: flex;
+  height: 4em;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,6 @@
+.customContent {
+  display: flex;
+  justify-content: center;
+  max-height: 5em;
+  align-items: center;
+}

@@ -81,3 +81,9 @@
     translate(29.5px, 29.5px);
   transform: translate(-29.5px, -29.5px) scale(0.295) translate(29.5px, 29.5px);
 }
+.customSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+}

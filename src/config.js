@@ -6,7 +6,7 @@ const API_URL = "https://api.themoviedb.org/3/";
 //image url from themoviedb = http://image.tmdb.org/t/p/w500/imagename.jpg
 
 //Taking the base URL
-const img_URL = "http://image.tmdb.org/t/p/";
+const img_URL = "https://image.tmdb.org/t/p/";
 
 //Declaring Poster size into width 500
 const img_Poster_Size = "w500";
