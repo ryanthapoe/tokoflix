@@ -14,8 +14,6 @@ class Content extends Component {
     pagesNow: 0,
     totalPages: 0,
     searchVal: "",
-    price: "",
-    buttonNav: "",
     loading: false
   };
 
@@ -34,7 +32,7 @@ class Content extends Component {
       searchVal,
       loading: true
     });
-    if (searchVal == "") {
+    if (searchVal === "") {
       url = `${API_URL}movie/popular?api_key=${API_KEY}&language=id-ID&region=ID&page=1`;
     } else {
       url = `${API_URL}search/movie?api_key=${API_KEY}&query=${searchVal}&language=id-ID&region=ID&page=1`;
@@ -66,6 +64,7 @@ class Content extends Component {
           movieArr: [...this.state.movieArr, ...result.results],
           pagesNow: result.page,
           totalPages: result.total_pages,
+          rating: result.vote_average,
           loading: false
         });
       });
@@ -74,16 +73,18 @@ class Content extends Component {
   render() {
     return (
       <div>
-        {console.log(this.state)}
         <Navigation callback={this.search} />
         <div className="container mt-5">
           <Cards
             header={this.state.searchVal ? "Hasil Pencarian" : "Film Populer"}
             loading={this.state.loading}
+            moviePrice={this.state.price}
           >
             {this.state.movieArr.map((element, i) => {
               return (
                 <Card
+                  titleAlt={element.title}
+                  moviePrice={element.vote_average}
                   key={i}
                   image={
                     element.poster_path
