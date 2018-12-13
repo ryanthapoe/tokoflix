@@ -10,5 +10,6 @@ const img_URL = "https://image.tmdb.org/t/p/";
 
 //Declaring Poster size into width 500
 const img_Poster_Size = "w500";
+const img_Backdrop_Size = "original";
 
-export { API_KEY, API_URL, img_URL, img_Poster_Size };
+export { API_KEY, API_URL, img_URL, img_Poster_Size, img_Backdrop_Size };

@@ -1,22 +1,10 @@
 import React from "react";
 import "./Card.css";
 import { Link } from "react-router-dom";
-import { convertMoney } from "../../../helper";
+import { convertMoney, hargaCalc } from "../../../helper";
 
 const Card = props => {
-  //Menentukan harga Film berdasarkan Rating
-  let harga;
-  if (props.moviePrice <= 3) {
-    harga = 3500;
-  } else if (props.moviePrice <= 6) {
-    harga = 8250;
-  } else if (props.moviePrice <= 8) {
-    harga = 16350;
-  } else if (props.moviePrice <= 10) {
-    harga = 21250;
-  } else {
-    harga = null;
-  }
+  const harga = hargaCalc(props.moviePrice);
   const hargaRupiah = convertMoney(harga);
 
   //Membuat slug dari Nama Film yg udah di fetch dari API untuk ke URL
@@ -36,7 +24,7 @@ const Card = props => {
         <p className="card-text float-right">Harga: {hargaRupiah}</p>
       </div>
       <div className="card-footer text-muted">
-        <Link to={`/:${props.movieID}-${slug}`}>
+        <Link to={`/${props.movieID}&slug=${slug}`}>
           <p className="btn btn-secondary">Lihat Detail</p>
         </Link>
         <p className="btn btn-primary float-right">Beli</p>

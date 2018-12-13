@@ -12,7 +12,7 @@ class App extends Component {
         <React.Fragment>
           <Switch>
             <Route path="/" component={Content} exact />
-            <Route path="/:movieId" component={DetailContent} exact />
+            <Route path="/:movieId&:slug" component={DetailContent} exact />
             <Route component={Nopage} exact />
           </Switch>
         </React.Fragment>
